@@ -22,5 +22,5 @@ function countArr(a, b) {
   }
   return j;
 }
-var abc = countArr(randomRes, 5);
+var abc = countArr(randomRes, parseInt(process.argv[2]));
 console.log(`Таких чисел содержит массив = ${abc}`);

@@ -6,18 +6,19 @@
 
 function one(a, b) {
   var one = "";
-  if (isNaN(a && b)) {
+  if (isNaN(a)==isNaN(b)) {
     one += "Error";
-  } else if (isNaN(b)) {
-    for (var i = 0; i <= a; i++) {
-      one += b;
-    }
   } else if (isNaN(a)) {
-    for (var i = 0; i <= b; i++) {
+    for (var i = 1; i <= b; i++) {
       one += a;
+    }
+  } else if (isNaN(b)) {
+    for (var i = 1; i <= a; i++) {
+      one += b;
     }
   }
   return one;
 }
-var res = one("a", 2);
+var res = one(process.argv[2], process.argv[3]);
 console.log(res);
+console.log(isNaN(process.argv[2]), isNaN(process.argv[3]))

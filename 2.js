@@ -1,4 +1,5 @@
-// 2 .Написать функцию которая принимала бы 3 параметра, число и диапазон значений, результатом должно быть массив чисел из
+// 2 .Написать функцию которая принимала бы 3 параметра, число и диапазон значений, 
+// результатом должно быть массив чисел из
 // диапазона которые делят заданное число  без остатка
 // G(3, 1, 3);
 // 1 2 3 наши значения
@@ -10,14 +11,14 @@
 function two(a, b, c) {
   var twob = [];
 
-  for (var i = b; i <= a; i++) {
-    twob[i - b] = i;
+  for (var i = 0; i <= a; i++) {
+    twob[i] = i+b;
   }
   //   console.log(twob);
   var twoRes = [];
   var k = 0;
-  for (i = 0; i < a; i += b) {
-    if (c % twob[i] == 0) {
+  for (i = 0; i < a; i++) {
+    if ( twob[i]%c == 0) {
       twoRes[k] = twob[i];
       k++;
     }
@@ -26,7 +27,7 @@ function two(a, b, c) {
   return twoRes;
 }
 
-var abc = two(3, 1, 3);
+var abc = two(parseInt(process.argv[2]), parseInt(process.argv[3]), parseInt(process.argv[4]));
 console.log(abc);
 
 // var a = 3;
